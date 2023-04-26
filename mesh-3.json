@@ -2,10 +2,10 @@
     "meshConfig": {
         "sources": [
             {
-                "name": "MagentoMonolithApi",
+                "name": "AdobeCommerceGQL",
                 "handler": {
                     "graphql": {
-                        "endpoint": "https://venia.magento.com/graphql"
+                        "endpoint": "https://2-4-5-headless-4hg5wga-pa2p6kzfphbvi.demo.magentosite.cloud/graphql"
                     }
                 }
             },
@@ -30,6 +30,32 @@
                         ]
                     }
                 }
+            },
+            {
+                "name": "Countries",
+                "handler": {
+                    "graphql": {
+                        "endpoint": "https://countries.trevorblades.com/"
+                    }
+                },
+                "transforms": [
+                    {
+                        "rename": {
+                            "renames": [
+                                {
+                                    "from": {
+                                        "type": "Query",
+                                        "field": "country"
+                                    },
+                                    "to": {
+                                        "type": "Query",
+                                        "field": "regioncountry"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
             }
         ],
         "additionalTypeDefs": "extend type SimpleProduct {\n    demoDetails: query_demo_products_items \n}\n",
