@@ -4,11 +4,11 @@ import DisplayCodeBlock from './DisplayCodeBlock'
 
 const CountriesExample = () => {
     return (
-        <div className="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8 mb-20">
+        <div className="mx-auto max-w-7xl overflow-hidden px-6 lg:px-8 mb-20">
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">
                 More data = 🤩📈💯
             </h2>
-            <div className="-mx-px grid grid-cols-2 gap-8 sm:mx-0 md:grid-cols-2">
+            <div className="-mx-px grid grid-cols-1 gap-8 sm:mx-0 md:grid-cols-2">
                 <div>
                     <div className="flex w-full my-4">
                         <h3 className="text-l font-bold flex-grow">
