@@ -5,7 +5,7 @@
                 "name": "AdobeCommerceGQL",
                 "handler": {
                     "graphql": {
-                        "endpoint": "https://2-4-5-headless-4hg5wga-pa2p6kzfphbvi.demo.magentosite.cloud/graphql"
+                        "endpoint": "https://venia.magento.com/graphql"
                     }
                 }
             }
@@ -17,6 +17,7 @@
                 "origin": [
                     "http://127.0.0.1:3000",
                     "http://localhost:3000",
+                    "https://199ow0-3000.csb.app",
                     "https://uso3ci.csb.app",
                     "https://yy8x61-3000.csb.app",
                     "https://codesandbox.io"
