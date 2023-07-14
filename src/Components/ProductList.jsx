@@ -21,6 +21,7 @@ const query = {
         image {
           url
         }
+				stock_status
       }
     }
   }`,
@@ -34,17 +35,18 @@ const options = {
     },
 }
 
-const ProductList = () => {
+const ProductList = ({ setDemoVersion, demoVersion }) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch(API_MESH_URL, options)
-            .then((response) => response.json())
-            .then((res) => {
-                console.log(res)
-
-                setProducts(res.data.products.items)
+        fetch(API_MESH_URL, options).then((response) => {
+            if (response.headers.get('demo-version')) {
+                setDemoVersion(response.headers.get('demo-version'))
+            }
+            response.json().then((data) => {
+                setProducts(data.data.products.items)
             })
+        })
     }, [])
     return (
         <div className="mx-auto max-w-7xl overflow-hidden px-6 lg:px-8 mb-20">
@@ -54,7 +56,11 @@ const ProductList = () => {
 
             <div className="-mx-px grid grid-cols-2 border-l border-t border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
                 {products.map((product) => (
-                    <ProductCard product={product} key={product.sku} />
+                    <ProductCard
+                        key={product.sku}
+                        product={product}
+                        demoVersion={demoVersion}
+                    />
                 ))}
             </div>
         </div>
