@@ -16,25 +16,25 @@ The mesh uses the following APIs as sources:
 
 ## Run Local Frontend
 
-Clone the project
+### Clone the project
 
 ```bash
   git clone https://link-to-project
 ```
 
-Go to the project directory
+### Go to the project directory
 
 ```bash
   cd my-project
 ```
 
-Install dependencies
+### Install dependencies
 
 ```bash
   npm install
 ```
 
-Start the server
+### Start the server
 
 ```bash
   npm run dev
@@ -44,13 +44,13 @@ Start the server
 
 To deploy one of the included meshes, makes sure you have followed the [API Mesh setup instructions](https://developer.adobe.com/graphql-mesh-gateway/gateway/overview/).
 
-**Create a mesh**
+### Create a mesh\*\*
 
 ```bash
   aio api-mesh create mesh-1.json
 ```
 
-**Update a mesh**
+### Update a mesh\*\*
 
 ```bash
   aio api-mesh update mesh-2.json
